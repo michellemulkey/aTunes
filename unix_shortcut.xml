@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<shortcuts>
+	<skipIfNotSupported/>
+	<programGroup defaultName="aTunes" location="applications" />
+	<shortcut
+		name="aTunes"
+		programGroup="yes"
+		desktop="yes"
+		applications="no"
+		startMenu="yes"
+		startup="no"
+		target="$INSTALL_PATH/aTunes.sh"
+		commandLine=""
+		workingDirectory="$INSTALL_PATH"
+		description="aTunes"
+		iconFile="$INSTALL_PATH/aTunes.ico"
+		iconIndex="0"
+		type="Application"
+		encoding="UTF-8"
+		terminal="true"
+		KdeSubstUID="false"
+		initialState="normal">
+		<createForPack name="Core"/>
+	</shortcut>
+</shortcuts>

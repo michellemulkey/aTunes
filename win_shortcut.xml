@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<shortcuts>
+  <skipIfNotSupported/>
+  <programGroup defaultName="aTunes" location="applications||startMenu"/>
+  <shortcut
+    name="aTunes"
+    target="$INSTALL_PATH\aTunes.exe"
+    commandLine=""
+    workingDirectory="$INSTALL_PATH\"
+    description="aTunes"
+    iconFile="$INSTALL_PATH\aTunes.ico"
+    iconIndex="0"
+    initialState="normal"
+    programGroup="yes"
+    desktop="yes"
+    applications="no"
+    startMenu="no"
+    startup="no">
+  </shortcut>
+</shortcuts>
