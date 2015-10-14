@@ -168,6 +168,7 @@ public class PlayListController extends PanelController implements PlayListColum
 		
 		boolean showTrack = ((PlayListTableModel)table.getModel()).isTrackVisible();
 		boolean showGenre = ((PlayListTableModel)table.getModel()).isGenreVisible();
+		boolean showDuration = ((PlayListTableModel)table.getModel()).isDurationVisible();	
 		
 		if (table.getColumnCount() < 2)
 			return;
@@ -175,7 +176,7 @@ public class PlayListController extends PanelController implements PlayListColum
 		int tableWidth = table.getWidth();
 		int favoriteColumnWidth = 18;
 		int trackColumnWidth = 30;
-		int durationColumnWidth = 50;
+		int durationColumnWidth = (showDuration) ? 50 : 0;
 		int nonDurationWidth = tableWidth - favoriteColumnWidth - trackColumnWidth - durationColumnWidth;
 		int nonDurationColumns = table.getColumnCount() - 3 - (showGenre ? 1 : 0);
 		int genreColumnWidth = 100;
@@ -193,12 +194,16 @@ public class PlayListController extends PanelController implements PlayListColum
 			table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 2).setMaxWidth(genreColumnWidth);
 		}
 
-		table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setMinWidth(durationColumnWidth);
-		table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setMaxWidth(durationColumnWidth);
+		if (showDuration) {
+		    table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setMinWidth(durationColumnWidth);
+		    table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setMaxWidth(durationColumnWidth);
+		}
 
 		for (int i = (showGenre ? 2 : 1); i < nonDurationColumns; i++) {
-			table.getColumnModel().getColumn(i).setPreferredWidth(nonDurationWidth / nonDurationColumns);
+		   table.getColumnModel().getColumn(i).setPreferredWidth(nonDurationWidth / nonDurationColumns);
 		}
+	
+
 		table.invalidate();
 		HandlerProxy.getVisualHandler().repaint();
 	}

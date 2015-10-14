@@ -44,6 +44,7 @@ public class PlayListControlsPanel extends JPanel {
 	private JCheckBoxMenuItem showArtist;
 	private JCheckBoxMenuItem showAlbum;
 	private JCheckBoxMenuItem showGenre;
+	private JCheckBoxMenuItem showDuration;	
 	private JMenuItem sortByTrack;
 	private JMenuItem sortByTitle;
 	private JMenuItem sortByArtist;
@@ -81,6 +82,7 @@ public class PlayListControlsPanel extends JPanel {
 		showArtist = new JCheckBoxMenuItem(LanguageTool.getString("SHOW_ARTISTS"));
 		showAlbum = new JCheckBoxMenuItem(LanguageTool.getString("SHOW_ALBUMS"));
 		showGenre = new JCheckBoxMenuItem(LanguageTool.getString("SHOW_GENRE"));
+		showDuration = new JCheckBoxMenuItem(LanguageTool.getString("SHOW_DURATION"));		
 		sortByTrack = new JMenuItem(LanguageTool.getString("SORT_BY_TRACK_NUMBER"));
 		sortByTitle = new JMenuItem(LanguageTool.getString("SORT_BY_TITLE"));
 		sortByArtist = new JMenuItem(LanguageTool.getString("SORT_BY_ARTIST"));
@@ -91,6 +93,7 @@ public class PlayListControlsPanel extends JPanel {
 		sortPopup.add(showArtist);
 		sortPopup.add(showAlbum);
 		sortPopup.add(showGenre);
+		sortPopup.add(showDuration);		
 		sortPopup.add(new JSeparator());
 		sortPopup.add(sortByTrack);
 		sortPopup.add(sortByTitle);
@@ -283,4 +286,8 @@ public class PlayListControlsPanel extends JPanel {
 	public JCheckBoxMenuItem getShowGenre() {
 		return showGenre;
 	}
-}
+	
+	public JCheckBoxMenuItem getShowDuration() {
+		return showDuration;
+	}
+	}

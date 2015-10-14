@@ -36,6 +36,8 @@ public class PlayListControlsController extends PanelController {
 		((PlayListControlsPanel) panelControlled).getShowArtist().setSelected(Kernel.getInstance().state.isShowArtistInPlayList());
 		((PlayListControlsPanel) panelControlled).getShowGenre().setSelected(Kernel.getInstance().state.isShowGenreInPlayList());
 		((PlayListControlsPanel) panelControlled).getShowTrack().setSelected(Kernel.getInstance().state.isShowTrackInPlayList());
+		((PlayListControlsPanel) panelControlled).getShowDuration().setSelected(Kernel.getInstance().state.isShowDurationInPlayList());
+		
 	}
 	
 	protected void addBindings() {
@@ -63,6 +65,7 @@ public class PlayListControlsController extends PanelController {
 		panel.getShowTrack().addActionListener(listener);
 		panel.getShowArtist().addActionListener(listener);
 		panel.getShowGenre().addActionListener(listener);
+		panel.getShowDuration().addActionListener(listener);
 		panel.getShowAlbum().addActionListener(listener);
 		panel.getArtistButton().addActionListener(listener);
 		panel.getAlbumButton().addActionListener(listener);

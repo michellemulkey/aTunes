@@ -55,6 +55,7 @@ public class ApplicationState implements Serializable {
 	private boolean showArtistInPlayList = true;
 	private boolean showAlbumInPlayList = true;
 	private boolean showGenreInPlayList = true;
+	private boolean showDurationInPlayList = true;	
 	private String theme = LookAndFeelSelector.DEFAULT_THEME;
 	
 	// Constant properties editable in edit preferences
@@ -298,6 +299,13 @@ public class ApplicationState implements Serializable {
 		this.showGenreInPlayList = showGenreInPlayList;
 	}
 
+	public boolean isShowDurationInPlayList() {
+		return showDurationInPlayList;
+	}
+
+	public void setShowDurationInPlayList(boolean showDurationInPlayList) {
+		this.showDurationInPlayList = showDurationInPlayList;
+	}
 	public int getVolume() {
 		return volume;
 	}

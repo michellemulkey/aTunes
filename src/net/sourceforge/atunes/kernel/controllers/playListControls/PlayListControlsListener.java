@@ -98,6 +98,13 @@ public class PlayListControlsListener implements ActionListener {
 			HandlerProxy.getControllerHandler().getPlayListController().adjustColumnsWidth();
 			HandlerProxy.getControllerHandler().getPlayListFilterController().reapplyFilter();
 		}
+		else if (e.getSource().equals(panel.getShowDuration())) {
+			PlayListTableModel model = HandlerProxy.getVisualHandler().getPlayListTableModel();
+			model.setDurationVisible(panel.getShowDuration().isSelected());
+			Kernel.getInstance().state.setShowDurationInPlayList(panel.getShowDuration().isSelected());
+			HandlerProxy.getControllerHandler().getPlayListController().adjustColumnsWidth();
+			HandlerProxy.getControllerHandler().getPlayListFilterController().reapplyFilter();
+		}		
 		else if (e.getSource().equals(panel.getArtistButton()))
 			HandlerProxy.getControllerHandler().getPlayListController().setArtistAsPlaylist();
 		else if (e.getSource().equals(panel.getAlbumButton()))
